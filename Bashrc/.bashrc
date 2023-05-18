@@ -22,24 +22,52 @@ alias aurup="paru -Syu --aur"
 
 #Other
 
+# Clear terminal
 alias cl="clear"
+
+# Extract tar.xz files and tar.gz files
 alias tarxz="tar -xf"
 alias untar="tar -zxvf"
+
+# Calculate SHA-256 checksum
 alias sha="shasum -a 256"
+
+# Get public IP address
 alias myip="curl ipinfo.io/ip"
 alias myip2="curl ip.tyk.nu"
+
+#List Files
+# List files with human-readable sizes and directories first, colored output
 alias ls="ls -hN --color=auto --group-directories-first"
+
+# List files with human-readable sizes, sorted by size, and classify them by type
 alias lt="ls --human-readable --size -l -S --classify"
-alias ff="find . type f -iname"
+
+# List all files, including hidden files
 alias la="ls -lisA"
+
+# Find files with case-insensitive name search
+alias ff="find . type f -iname"
+
+# Show disk usage summary
 alias usage='du -ch | grep total'
+
+# Show total disk space usage
 alias totalusage='df -hl --total | grep total'
+
+# Prompt before deleting files
 alias rm="rm -i"
+
+# Fetch HN news headlines
 alias hnews="curl hkkr.in"
+
+# Check XMR exchange rate
 alias xmr="curl rate.sx/xmr"
+
+# Check cryptocurrency exchange rates
 alias crypto="curl rate.sx"
-#alias vim="nvim"
-#alias sudo="doas"
+
+# Create parent directories if they don't exist
 alias mkdir='mkdir -pv'
 
 #cd 
