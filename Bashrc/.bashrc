@@ -88,16 +88,20 @@ alias stream="webtorrent --playlist -o """/home/re/Videos/other/" --mpv "
 
 # yt-dlp
 
-#alias yt-aac="yt-dlp --extract-audio --audio-format aac "
-#alias yt-flac="yt-dlp --extract-audio --audio-format flac "
-alias yt-mp3="yt-dlp -P "/run/media/re/leonardo/yt-dlp/" -f 'ba' -x --audio-format mp3 --embed-thumbnail"
-#alias yt-opus="yt-dlp --extract-audio --audio-format opus "
-#alias yt-vorbis="yt-dlp --extract-audio --audio-format vorbis "
-#alias yt-wav="yt-dlp --extract-audio --audio-format wav "
-alias yt-best="yt-dlp -P "/run/media/re/leonardo/yt-dlp/" -f 'bv[height=1080][ext=mp4]+ba[ext=m4a]' --merge-output-format mp4"
-alias yt-channel="yt-dlp -P "/home/re/Videos/channels/" -f 'bv*[height>=720]+ba' --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive finished.txt"
-alias yt-playlist="yt-dlp -P "/home/re/Videos/playlist/" -f 'bv*[height=1080]+ba' --merge-output-format mkv --embed-thumbnail --write-subs"
+alias yt-aac="yt-dlp -x --audio-format aac -o '%(title)s.%(ext)s'"
+alias yt-flac="yt-dlp -x --audio-format flac -o '%(title)s.%(ext)s'"
+alias yt-mp3="yt-dlp -P '/run/media/re/leonardo/yt-dlp/' -f 'bestaudio' --embed-thumbnail --add-metadata --audio-format mp3 -o '%(title)s.%(ext)s'"
+alias yt-opus="yt-dlp -x --audio-format opus -o '%(title)s.%(ext)s'"
+alias yt-vorbis="yt-dlp -x --audio-format vorbis -o '%(title)s.%(ext)s'"
+alias yt-wav="yt-dlp -x --audio-format wav -o '%(title)s.%(ext)s'"
+alias yt-best='yt-dlp -o "/run/media/re/leonardo/yt-dlp/%(title)s.%(ext)s" -f "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]" --embed-thumbnail --merge-output-format mp4'
+alias yt-channel='yt-dlp -o "/home/re/Videos/channels/%(uploader)s [%(channel_id)s]/%(title)s [%(id)s].%(ext)s" -f "bv*[height>=720]+ba" --merge-output-format mp4 --embed-thumbnail --embed-metadata --embed-subs --download-archive finished.txt -i'
+alias yt-playlist='yt-dlp -o "/home/re/Videos/playlist/%(playlist_title)s/%(playlist_index)s - %(title)s [%(id)s].%(ext)s" -f "bv*[height=1080]+ba" --merge-output-format mkv --embed-thumbnail --write-subs'
 
 #export EDITOR=nvim 
 #export EDITOR=vim 
 export EDITOR=helix
+
+alias hx="helix"
+#alias vim="nvim"
+#alias sudo="doas"
